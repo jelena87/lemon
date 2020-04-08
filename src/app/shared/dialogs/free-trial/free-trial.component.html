@@ -1,0 +1,53 @@
+<div class="remodal u-height-auto">
+    <div class="c-flexbox c-flex-column c-wrapper">
+      <div class="c-heading-small u-mb">Get started</div>
+      <p>${{ fromParent.amount }}/month billed monthly</p>
+      <form novalidate (ngSubmit)="buy()" [formGroup]="stripeSubmit">
+          <label class="c-label">Billing country</label>
+          <select class="c-select">
+            <option>United States</option>
+          </select>
+          <div class="c-layout">
+              <div class="c-layout__item u-pr">
+                <label class="c-label">First Name</label>
+                <input class="c-input" type="text" placeholder="Enter first name" required formControlName="firstName" />
+              </div>
+              <div class="c-layout__item">
+                <label class="c-label">Last Name</label>
+                <input class="c-input" type="text" placeholder="Enter last name" required formControlName="lastName" />
+              </div>
+            </div>
+            <label class="c-label">Credit Card Number</label>
+            <div class="u-position-relative">
+              <div class="c-input" id="card-number"></div>
+              <span class="c-credit-cards">
+                <img src="../assets/images/american-express.svg" />
+                <img src="../assets/images/mastercard.svg" />
+                <img src="../assets/images/visa.svg" />
+                <img src="../assets/images/discover.svg"/>
+              </span>
+            </div>
+            <div class="c-layout">
+              <div class="c-layout__item u-1-3">
+                <label class="c-label">Enter CVC</label>
+                <div class="c-input" id="card-cvc"></div>
+              </div>
+              <div class="c-layout__item u-1-3">
+                <label class="c-label">Expiration Date</label>
+                <div class="c-input" id="card-expiry">
+
+                </div>
+              </div>
+              <div class="c-layout__item u-1-3">
+                <label class="c-label">Zip Code</label>
+                <input type="number" class="c-input" placeholder="Enter ZIP" formControlName="zipCode" />
+              </div>
+            </div>
+            <div class="u-text-left u-mb" style="color: red;">{{ errorMessage }}</div>
+            <div class="c-flexbox c-flex-space-between">
+              <a (click)="activeModal.dismiss('Cross click')" class="c-btn c-btn--light u-width-160">Cancel</a>
+              <button type="submit" class="c-btn u-width-160" [disabled]="disabledButton">Get started</button>
+            </div>
+      </form>
+    </div>
+  </div>

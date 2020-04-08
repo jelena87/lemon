@@ -1,0 +1,40 @@
+.menu-btn {
+  border: none;
+  color: #000;;
+}
+
+.menu-btn:link, .menu-btn:visited, .menu-btn:hover, .menu-btn:active, .show > .btn-outline-primary.dropdown-toggle {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+}
+.btn-outline-primary:focus {
+  box-shadow: none !important;
+}
+
+.star {
+  color: #b0c4de;
+  max-width: 60px !important;
+  width: 50px !important;
+  padding: 12px;
+  margin: -10px;
+  border-radius: 5px;
+}
+.full {
+  content: url('/../assets/images/star-active.svg');
+}
+.half > img {
+  max-width: 30px !important;
+  width: 30px !important;
+}
+
+.even { background-color: #E6EAF2; }
+.odd { background-color: #fff; }
+
+.c-tab-container {
+  &:nth-child(even) {
+        background-color: #fff;
+    }
+}
+

@@ -1,0 +1,33 @@
+<header class="c-header">
+  <div class="c-header__logo">
+    <a [routerLink]="['/']">
+        <img src="../assets/images/lemon.svg" />
+    </a>
+  </div>
+  <div class="u-position-relative" style="display: flex;">
+    <a class="c-header__btn" (click)="openNewEmailModal()">
+      <img src="../assets/images/btn-plus.svg" />
+      new review request
+    </a>
+    <div>
+        <div class="c-menu" ngbDropdown class="d-inline-block" *ngIf="currentUser; else logout">
+            <button class="btn btn-outline-primary menu-btn" id="dropdownBasic1"  ngbDropdownToggle>
+                <!-- <div class="c-menu__logo">
+                    <img *ngIf="logo" [src]="logo" />
+                  </div> -->
+              {{ currentUser.firstName }} {{ currentUser.lastName }}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="onSettings()">Account Settings</button>
+              <button ngbDropdownItem (click)="onLogout()" *ngIf="!admin">Log Out</button>
+              <button ngbDropdownItem (click)="onReturnToAdmin()" *ngIf="admin">Return to admin</button>
+            </div>
+        </div>
+        <ng-template #logout>
+            <div>
+                <button class="btn btn-outline-primary menu-btn" (click)="onLogout()" *ngIf="!admin">Log Out</button>
+            </div>
+        </ng-template>
+    </div>
+  </div>
+</header>
+

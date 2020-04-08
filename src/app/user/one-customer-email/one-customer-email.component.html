@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="c-bg">
+  <div class="c-wrapper-medium">
+    <div class="c-layout">
+      <div class="c-layout__item">
+        <form #sendOneEmailForm="ngForm" (ngSubmit)="onSubmit(sendOneEmailForm.value)">
+          <label class="c-label">Customer name</label>
+          <div class="c-layout">
+            <div class="c-layout__item u-pr">
+              <input
+              class="c-input"
+              type="text"
+              placeholder="Enter first name"
+              ngModel
+              name="firstName" />
+            </div>
+            <div class="c-layout__item">
+              <input
+              class="c-input"
+              type="text"
+              placeholder="Enter last name"
+              ngModel
+              name="lastName" />
+            </div>
+          </div>
+          <label class="c-label">Customer email</label>
+          <input
+          class="c-input"
+          type="email"
+          placeholder="Enter email"
+          [(ngModel)]="emailData.email"
+          (keyup.enter)="OnInput(email.value)"
+          required
+          email
+          name="email"
+          #email="ngModel" />
+          <div class="error-handle" *ngIf="!email.valid && email.touched">
+             <span class="help-block">Email is required.</span>
+          </div>
+          <label class="c-label">Customer phone number (optional)</label>
+          <input
+          class="c-input"
+          type="number"
+          placeholder="Enter phone number"
+          ngModel
+          name="phoneNumber" />
+          <label class="c-label">Personal message to customer (optional)</label>
+          <textarea
+          class="c-textarea"
+          placeholder="It was wonderful working with you!"
+          [(ngModel)]="message"
+          name="message"></textarea>
+          <button class="c-btn" type="submit" [disabled]="!sendOneEmailForm.valid">Preview and Send</button>
+        </form>
+      </div>
+      <div>
+        <div class="message-preview">
+            <div class="preview">
+              <img *ngIf="logo"  [src]="logo" alt="" class="logo-preview">
+
+                    <h4 style="font-size: 15px;">{{ message }}</h4>
+
+              <p class="c-paragraph-preview u-font-18">
+                How would you rate your experience with us?
+                We strive for a 5 star experience.
+              </p>
+              <div class="c-rating">
+                <input class="c-rating__input" type="radio" id="star5" name="rating" value="5" ngModel /><label for="star5"></label>
+                <input class="c-rating__input" type="radio" id="star4" name="rating" value="4" ngModel /><label for="star4"></label>
+                <input class="c-rating__input" type="radio" id="star3" name="rating" value="3" ngModel /><label for="star3"></label>
+                <input class="c-rating__input" type="radio" id="star2" name="rating" value="2" ngModel /><label for="star2"></label>
+                <input class="c-rating__input" type="radio" id="star1" name="rating" value="1" ngModel /><label for="star1"></label>
+              </div>
+              <p class="c-paragraph-preview u-font-18 mobile-paragraph">How was your experience?</p>
+              <textarea
+              class="c-textarea c-textarea--large u-width-580"
+              placeholder="Optional but helpful for us"
+              name="text"
+              ngModel
+              readonly>
+            </textarea>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

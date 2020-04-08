@@ -1,0 +1,28 @@
+.star {
+  color: #b0c4de;
+  max-width: 60px !important;
+  width: 60px !important;
+  background: rgba(255, 122, 13, 0.1);
+  padding: 15px;
+  margin: 4px;
+  border-radius: 5px;
+}
+.full {
+  content: url('/../assets/images/star-active.svg');
+  background: rgba(255, 122, 13, 0.1);
+}
+.half > img {
+  max-width: 60px !important;
+  width: 60px !important;
+}
+
+@media only screen and (max-width: 640px) {
+  .star {
+    color: #b0c4de;
+    max-width: 50px !important;
+    width: 50px !important;
+    background: rgba(255, 122, 13, 0.1);
+    padding: 10px;
+    margin: 3px;
+}
+}

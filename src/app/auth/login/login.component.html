@@ -1,0 +1,80 @@
+<!-- <div class="c-wrapper-1440 u-position-relative">
+    <div class="c-login-header">
+      <img src="../assets/images/lemon.svg" />
+      <div>
+        <span class="u-color-white u-mr-20">Don't have an account?</span>
+        <a class="c-btn c-btn--secondary u-inline-block" [routerLink]="['/signup']">Start free trial</a>
+      </div>
+    </div>
+    <div class="c-login">
+      <div class="c-login-left">
+        <div class="c-wrapper u-text-left">
+          <h2>Welcome back</h2>
+          <p class="c-paragraph u-mb-large u-text-left">
+            Enter your details below
+          </p>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <label class="c-label">Email</label>
+            <input class="c-input" type="email" placeholder="Enter your email" required formControlName="username" />
+            <label class="c-label">Password</label>
+            <input class="c-input" type="password" placeholder="Enter your password" required formControlName="password"/>
+            <button class="c-btn" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+      <div class="c-login-right">
+        <div class="c-login-bg">
+          <div class="c-avatar">
+            <img src="../assets/images/avatar.png" />
+          </div>
+          <div class="c-user-quote">
+            “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Cras justo lacus, eleifend a felis et, tristique hendrerit
+            ligula.”
+          </div>
+          <div class="c-username">Brent Gilmore</div>
+          <div class="c-user-proffession">Highfive Founder</div>
+        </div>
+      </div>
+    </div>
+    </div> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="wrapper">
+                <div class="wrapper-left">
+                  <div class="logo logo-mobile">
+                      <img src="../assets/images/lemon.svg" />
+                      <a class="c-btn c-btn--secondary u-inline-block link-mobile" [routerLink]="['/signup']">Signup</a>
+                  </div>
+                  <div class="form-inputs">
+                    <h2>Welcome back</h2>
+                    <p class="c-paragraph u-mb-large u-text-left">Enter your details below</p>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                      <label class="c-label">Email</label>
+                      <input class="c-input" type="email" placeholder="Enter your email" required formControlName="username" />
+                      <label class="c-label">Password</label>
+                      <input class="c-input" type="password" placeholder="Enter your password" required formControlName="password"/>
+                      <p style="color: red;">{{ errorMessage }}</p>
+                      <button class="c-btn" type="submit">Login</button>
+                    </form>
+                  </div>
+                  <div></div>
+                </div>
+                <div class="c-login-bg">
+                  <div class="links">
+                    <span class="u-color-white u-mr-20">Don't have an account?</span>
+                    <a class="c-btn c-btn--secondary u-inline-block" [routerLink]="['/signup']">Start free trial</a>
+                  </div>
+                  <div>
+                    <div class="c-user-quote">
+                      “We used Lemon to get 80+ 5 star google reviews
+                      for European Watch Company. I can't believe it.”
+                    </div>
+                      <div class="c-username">Joshua Ganjei</div>
+                      <div class="c-user-proffession">European Watch Company</div>
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+        </div>
+      </div>

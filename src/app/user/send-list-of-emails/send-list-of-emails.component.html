@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="c-bg">
+  <div class="c-wrapper-medium">
+    <div class="c-layout">
+      <div class="c-layout__item">
+        <h4 class="c-heading-small u-mb0" *ngIf="!emailsData; else diffHeading">Upload customer emails</h4>
+        <ng-template #diffHeading><h4><span>{{ emails.length }}</span> customer emails uploaded</h4></ng-template>
+        <form #sendMultipleEmails="ngForm">
+            <p class="c-paragraph">This is who will get your review request</p>
+            <button class="c-btn u-mb" type="button" (click)="uploadMore()">Upload <span *ngIf="emailsData" >more emails</span></button>
+            <h4 class="c-heading-small c-heading-ultrasmall u-mb0 u-pt">Personal message to Customers (Optional)</h4>
+            <p class="c-paragraph">Everyone will see the same message</p>
+            <textarea
+            class="c-textarea"
+            placeholder="{{ text }}"
+            [(ngModel)]="text"
+            #message
+            name="message"></textarea>
+            <button class="c-btn" type="button" [disabled]="disableButton" (click)="onSubmitWithMessage(message.value)">Preview & Send</button>
+        </form>
+      </div>
+      <div>
+          <div class="message-preview">
+              <!-- <img class="u--ml" src="../assets/images/iphone.png" /> -->
+              <div class="preview">
+                <img *ngIf="logo"  [src]="logo" alt="" class="logo-preview">
+                  <h4 *ngIf="!text; else diffMessage" style="font-size: 1.1rem;">It was wonderful working with you!</h4>
+                  <ng-template #diffMessage>
+                    <h4 style="font-size: 1.1rem;">{{ text }}</h4>
+                  </ng-template>
+                <p class="c-paragraph-preview u-font-18">
+                  How would you rate your experience with us?
+                  We strive for a 5 star experience.
+                </p>
+                <div class="c-rating">
+                  <input class="c-rating__input" type="radio" id="star5" name="rating" value="5" ngModel /><label for="star5"></label>
+                  <input class="c-rating__input" type="radio" id="star4" name="rating" value="4" ngModel /><label for="star4"></label>
+                  <input class="c-rating__input" type="radio" id="star3" name="rating" value="3" ngModel /><label for="star3"></label>
+                  <input class="c-rating__input" type="radio" id="star2" name="rating" value="2" ngModel /><label for="star2"></label>
+                  <input class="c-rating__input" type="radio" id="star1" name="rating" value="1" ngModel /><label for="star1"></label>
+                </div>
+                <p class="c-paragraph-preview u-font-18 mobile-paragraph">How was your experience?</p>
+                <textarea
+                class="c-textarea c-textarea--large u-width-580"
+                placeholder="Optional but helpful for us"
+                name="text"
+                ngModel
+                readonly>
+              </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

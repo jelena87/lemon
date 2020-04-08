@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="c-bg">
+    <div class="c-wrapper">
+        <div class="c-test-email" *ngIf="emailArrowImg">
+            <img src="../assets/images/arrow.png" />
+            <div class="c-kalam-heading">Great! <br>Send a test email to yourself</div>
+        </div>
+      <h2 class="c-heading">Account settings</h2>
+      <div class="c-label u-text-center">Add your logo</div>
+      <form (ngSubmit)="onUpload()" [formGroup]="uploadForm">
+          <div class="u-mb-large">
+          <img class="c-upload-btn" *ngIf="logo"  alt='logo' title="logo" [src]="logo" (click)="logoInput.click()" />
+            <input
+            id="fileUpload"
+            type="file"
+            name="fileUpload"
+            (change)="onFileSelected($event)"
+            #logoInput
+            class="c-upload-input" />
+          </div>
+          <label class="c-label">Name of your business</label>
+          <input class="c-input" formControlName="businessName" type="text" [(ngModel)]="businessName" placeholder="Enter your business name" />
+          <label class="c-label">Link to online review profile</label>
+          <input class="c-input" formControlName="googleReviewLink" type="text" [(ngModel)]="googleReviewLink" placeholder="ex. Google Reviews" />
+
+          <div class="c-label u-text-center u-mt-large">{{ saveText }}</div>
+          <div class="c-label u-text-center u-mt-large error-message" *ngIf="errorSettings" >{{ errorSettings.error.error.message }}</div>
+          <button class="c-btn">Save</button>
+      </form>
+    </div>
+  </div>

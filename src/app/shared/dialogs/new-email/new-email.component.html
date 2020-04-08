@@ -1,0 +1,25 @@
+<div class="remodal">
+  <button aria-label="Close" (click)="activeModal.dismiss('Cross click')" class="remodal-close"></button>
+  <div>
+    <h5 class="c-heading-extrasmall">New Review Request</h5>
+    <h4 class="c-heading-small u-mb-large text-center">Sending this to one customer or a list of customers?</h4>
+    <div class="c-box-wrapper">
+      <div class="c-box-item">
+        <div class="c-box-item__heading">One at a time</div>
+        <div class="c-box-item__subheading">Perfect for 5 or fewer</div>
+        <a class="c-box" [routerLink]="['/send-one-email']" (click)="activeModal.close()">
+          <img src="../assets/images/one-customer.svg" />
+          <div class="c-box__title">Send to one customer</div>
+        </a>
+      </div>
+      <div class="c-box-item">
+        <div class="c-box-item__heading">Send to a list of customers</div>
+        <div class="c-box-item__subheading">Great for more than 5</div>
+        <a class="c-box" [routerLink]="['/upload-emails']" (click)="activeModal.close()">
+          <img src="../assets/images/list-customers.svg" />
+          <div class="c-box__title">Send to list of customers</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

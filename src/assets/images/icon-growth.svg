@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Lemon-landing" transform="translate(-770.000000, -1211.000000)" fill="#FF7A0D">
+            <g id="Boxes" transform="translate(120.000000, 1181.000000)">
+                <g id="Box-2" transform="translate(620.000000, 0.000000)">
+                    <g id="Group-5" transform="translate(30.000000, 30.000000)">
+                        <rect id="Rectangle" opacity="0.100000001" x="0" y="0" width="68" height="68" rx="4"></rect>
+                        <rect id="Rectangle" x="18" y="36" width="8" height="17" rx="2"></rect>
+                        <path d="M32,26 L36,26 C37.1045695,26 38,26.8954305 38,28 L38,51 C38,52.1045695 37.1045695,53 36,53 L32,53 C30.8954305,53 30,52.1045695 30,51 L30,28 C30,26.8954305 30.8954305,26 32,26 Z" id="Rectangle-Copy-11"></path>
+                        <path d="M44,16 L48,16 C49.1045695,16 50,16.8954305 50,18 L50,51 C50,52.1045695 49.1045695,53 48,53 L44,53 C42.8954305,53 42,52.1045695 42,51 L42,18 C42,16.8954305 42.8954305,16 44,16 Z" id="Rectangle-Copy-12"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

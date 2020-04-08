@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Emoji</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Lemon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Welcome" transform="translate(-690.000000, -200.000000)">
+            <g id="Welcome-Modal" transform="translate(500.000000, 168.000000)">
+                <g id="Emoji" transform="translate(180.000000, 20.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="80" height="80"></rect>
+                    <text id="👋" font-family="AppleColorEmoji, Apple Color Emoji" font-size="56" font-weight="normal" line-spacing="22" fill="#34425C">
+                        <tspan x="10" y="98">👋</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="c-bg">
+  <div class="c-wrapper-medium">
+  <form #sendMultipleEmails="ngForm" (ngSubmit)="onSubmit()">
+    <div class="c-flexbox c-flex-space-between u-mb-large">
+      <div class="u-text-left">
+        <h4 class="c-heading-small">Copy / Pasted File</h4>
+        <p class="c-paragraph">
+          Paste customer emails here
+        </p>
+      </div>
+      <button class="c-btn c-btn--small u-width-180" type="submit">Done</button>
+    </div>
+      <ngx-codemirror
+      #codeeditor
+  name='emails'
+  id='textarea'
+  [options]="{
+    lineNumbers: true,
+    theme: 'idea',
+    mode: 'application/ld+json',
+    pasteLinesPerSelection: true,
+    inputStyle: 'textarea',
+    cursorBlinkRate: 0,
+    placeholder: 'Email address..'}"></ngx-codemirror>
+    </form>
+  </div>
+
+</div>

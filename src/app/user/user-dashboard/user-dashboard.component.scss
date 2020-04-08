@@ -1,0 +1,33 @@
+.star {
+  color: #b0c4de;
+  max-width: 25px !important;
+  width: 25px !important;
+}
+.full {
+  content: url('/../assets/images/star-active.svg');
+}
+.half > img {
+  max-width: 25px !important;
+  width: 25px !important;
+}
+.menu-btn {
+  border: none;
+  color: #000;;
+}
+
+.menu-btn:link, .menu-btn:visited, .menu-btn:hover, .menu-btn:active, .show > .btn-outline-primary.dropdown-toggle {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-outline-primary:focus {
+  box-shadow: none !important;
+}
+
+.c-lets-get-reviews {
+  right: 150px;
+  top: 15px;
+  margin-top: 15px;
+}

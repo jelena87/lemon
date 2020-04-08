@@ -1,0 +1,60 @@
+<header class="c-header">
+    <div class="c-header__logo">
+      <a [routerLink]="['/']">
+          <img src="../assets/images/lemon.svg" />
+      </a>
+    </div>
+    <div class="u-position-relative">
+        <div class="c-menu" ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary menu-btn" id="dropdownBasic1"  ngbDropdownToggle>
+                <!-- <div class="c-menu__logo">
+                    <img *ngIf="logo" [src]="logo" />
+                  </div> -->
+              {{ currentUser.firstName }} {{ currentUser.lastName }}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="onSettings()">Account Settings</button>
+              <button ngbDropdownItem (click)="onLogout()" *ngIf="!admin">Log Out</button>
+              <button ngbDropdownItem (click)="onReturnToAdmin()" *ngIf="admin">Return to admin</button>
+            </div>
+        </div>
+    </div>
+  </header>
+  <div class="c-bg"  *ngIf="display">
+    <h2 class="u-text-center u-pt">Choose the best plan for you</h2>
+    <p class="c-paragraph u-mb-large">All annual plans come with a 100% money back guarantee up to 12 months after purchase</p>
+    <div class="c-cards">
+      <div class="c-card" *ngFor="let plan of plans">
+        <b>{{ plan.name }}</b>
+        <hr />
+        <div class="c-card__price"><sup>$</sup>{{ plan.price }}</div>
+        <div>per month</div>
+        <ul class="c-card__list" *ngFor="let desc of plan.description" >
+          <li class="c-card__item">
+
+              {{ desc }}</li>
+        </ul>
+        <button (click)="openFreeTrialModal(plan.id, plan.price)" type="button" class="c-btn">Get started</button>
+      </div>
+      <div class="c-card">
+          <b>Corporate</b>
+          <hr />
+          <div class="c-card__contact">Contact us</div>
+          <div>Contact us for annual discounts</div>
+          <ul class="c-card__list">
+            <li class="c-card__item_corp">
+
+                Unlimited review requests sent monthly</li>
+            <li class="c-card__item_corp">
+
+                Unlimited Bulk Requests</li>
+            <li class="c-card__item_corp">
+
+                Multi-Location functionality</li>
+          </ul>
+          <a href="https://lemonapp.typeform.com/to/aKyDSF" target="_blank" type="button" class="c-btn">Contact Us</a>
+        </div>
+    </div>
+    <div class="footer-text">
+        <p>Your account comes with our set up service included. We will help you get set up and <br> make sure you are successful with lemon.</p>
+    </div>
+  </div>

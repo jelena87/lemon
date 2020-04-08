@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Lemon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Account-Settings" transform="translate(-708.000000, -272.000000)" fill="#304AAB">
+            <g transform="translate(460.000000, 102.000000)" id="Group-2">
+                <g transform="translate(181.000000, 74.000000)">
+                    <polygon id="Path" transform="translate(79.363961, 108.363961) rotate(-315.000000) translate(-79.363961, -108.363961) " points="80.7781746 108.363961 88.5563492 116.142136 87.1421356 117.556349 79.363961 109.778175 71.5857864 117.556349 70.1715729 116.142136 77.9497475 108.363961 70.1715729 100.585786 71.5857864 99.1715729 79.363961 106.949747 87.1421356 99.1715729 88.5563492 100.585786"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

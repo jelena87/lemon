@@ -1,0 +1,29 @@
+<div class="c-visible-mobile">
+    <div class="c-shape"></div>
+  </div>
+  <div class="c-wrapper-large">
+    <h3 class="c-heading-medium mobile-heading">Add this to our Google Reviews</h3>
+    <p class="c-paragraph u-font-20 mobile-h5">
+      <b>This will help us a ton.</b>
+    </p>
+    <div class="c-rating">
+        <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill"><img src="../assets/images/star-inactive.svg" alt=""></span>
+            </span>
+        </ng-template>
+    <ngb-rating [(rate)]="reviewInfo.reviewInfo.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+    </div>
+    <textarea
+    class="c-textarea c-textarea--large u-width-580"
+    placeholder="Optional but helpful for us"
+    #reviewText
+    [value]= "reviewInfo.reviewInfo.text"
+    ></textarea>
+    <button class="c-btn-link" (click)="copyToClipboard()">Copy Review</button>
+    <div class="c-arrows">
+      <img class="c-arrows__left" src="../assets/images/arrow-1.svg" />
+      <img class="c-arrows__right" src="../assets/images/arrow-2.svg" />
+    </div>
+    <a class="c-btn u-width-580 u-margin-auto" (click)=onPost()>Add to Google Reviews</a>
+  </div>

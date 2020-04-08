@@ -1,0 +1,99 @@
+  <!-- <div class="c-wrapper-1440">
+    <div class="c-login-header">
+      <img src="../assets/images/lemon.svg" />
+      <div>
+        <span class="u-color-white u-mr-20">Already have an account?</span>
+        <a class="c-btn c-btn--secondary u-inline-block" [routerLink]="['/login']">Login</a>
+      </div>
+    </div>
+    <div class="c-login">
+      <div class="c-login-left">
+        <div class="c-wrapper u-text-left">
+          <h2>Start your 7-day free trial</h2>
+          <p class="c-paragraph u-mb-large u-text-left">
+            Enter your details below
+          </p>
+          <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+            <label class="c-label">Your name</label>
+            <div class="c-layout">
+              <div class="c-layout__item u-pr">
+                <input class="c-input" type="text" placeholder="Enter first name" formControlName="firstName" />
+              </div>
+              <div class="c-layout__item">
+                <input class="c-input" type="text" placeholder="Enter last name" formControlName="lastName" />
+              </div>
+            </div>
+            <label class="c-label">Business email</label>
+            <input class="c-input" type="email" placeholder="Enter email" formControlName="email" />
+            <label class="c-label">Password</label>
+            <input class="c-input" type="password" placeholder="Create your password" formControlName="password" />
+            <div class="u-mb-large">I agree to lemon's <a href="#">Terms of Service</a></div>
+            <button type="submit" class="c-btn">Sign up</button>
+          </form>
+        </div>
+      </div>
+      <div class="c-login-right">
+        <div class="c-login-bg">
+          <div class="c-avatar">
+            <img src="../assets/images/avatar.png" />
+          </div>
+          <div class="c-user-quote">
+            “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Cras justo lacus, eleifend a felis et, tristique hendrerit
+            ligula.”
+          </div>
+          <div class="c-username">Brent Gilmore</div>
+          <div class="c-user-proffession">Highfive Founder</div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="container-fluid">
+      <div class="row">
+          <div class="wrapper">
+              <div class="wrapper-left">
+                <div class="logo logo-mobile">
+                    <img src="../assets/images/lemon.svg" />
+                    <a class="c-btn c-btn--secondary u-inline-block link-mobile" [routerLink]="['/login']">Login</a>
+                </div>
+                <div class="form-inputs">
+                    <h2>Start your 7-day free trial</h2>
+                    <p class="c-paragraph u-mb-large u-text-left">Enter your details below</p>
+                    <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+                      <label class="c-label">Your name</label>
+                      <div class="c-layout">
+                        <div class="c-layout__item u-pr">
+                          <input class="c-input" type="text" placeholder="Enter first name" formControlName="firstName" />
+                        </div>
+                        <div class="c-layout__item">
+                          <input class="c-input" type="text" placeholder="Enter last name" formControlName="lastName" />
+                        </div>
+                      </div>
+                      <label class="c-label">Business email</label>
+                      <input class="c-input" type="email" placeholder="Enter email" formControlName="email" />
+                      <label class="c-label">Password</label>
+                      <input class="c-input" type="password" placeholder="Create your password" formControlName="password" />
+                      <div class="u-mb-large">I agree to lemon's Terms of Service</div>
+                      <button type="submit" class="c-btn">Sign up</button>
+                    </form>
+                </div>
+                <div></div>
+              </div>
+              <div class="c-login-bg">
+                <div class="links">
+                  <span class="u-color-white u-mr-20">Already have an account?</span>
+                  <a class="c-btn c-btn--secondary u-inline-block" [routerLink]="['/login']">Login</a>
+                </div>
+                <div>
+                  <div class="c-user-quote">
+                    “We used Lemon to get 80+ 5 star google reviews
+                    for European Watch Company. I can't believe it.”
+                  </div>
+                    <div class="c-username">Joshua Ganjei</div>
+                    <div class="c-user-proffession">European Watch Company</div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+      </div>
+    </div>

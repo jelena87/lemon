@@ -1,0 +1,14 @@
+.menu-btn {
+  border: none;
+  color: #000;;
+}
+
+.menu-btn:link, .menu-btn:visited, .menu-btn:hover, .menu-btn:active, .show > .btn-outline-primary.dropdown-toggle {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+}
+.btn-outline-primary:focus {
+  box-shadow: none !important;
+}

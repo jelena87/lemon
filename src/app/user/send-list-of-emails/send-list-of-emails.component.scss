@@ -1,0 +1,93 @@
+.error-handle {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+}
+
+.message-preview {
+  background-image: url('/assets/images/iphone.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 800px;
+  width: 700px;
+  background-position: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.row {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.preview {
+  width: 250px;
+  margin-top: 150px;
+  height: 450px;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+}
+
+.logo-preview {
+  max-width: 230px;
+  max-height: 100px;
+}
+
+.c-textarea--large {
+  min-height: 120px;
+}
+
+.c-rating label {
+  float: right;
+  position: relative;
+  width: 43px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  background-color: #EFF1F5;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.mobile-paragraph {
+  text-align: left;
+  margin-bottom: 5px !important;
+}
+
+.c-rating {
+  width: 245px;
+  height: 45px;
+  margin: 20px 0;
+}
+
+.c-paragraph-preview {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+h4 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.c-rating label:before {
+  top: 47% !important;
+}
+
+.c-textarea--large::placeholder {
+  font-size: 14px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .message-preview {
+    background-size: cover;
+  }
+}

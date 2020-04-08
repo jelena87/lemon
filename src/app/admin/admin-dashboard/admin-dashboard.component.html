@@ -1,0 +1,208 @@
+<header class="c-header">
+    <div class="c-header__logo">
+      <a [routerLink]="['/']">
+          <img src="../assets/images/lemon.svg" />
+      </a>
+    </div>
+    <div class="u-position-relative">
+        <div class="c-menu" ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary menu-btn" id="dropdownBasic1" ngbDropdownToggle>
+                <!-- <div class="c-menu__logo">
+                    <img *ngIf="logo" [src]="logo" />
+                  </div> -->
+                  {{ firstName }} {{ lastName }}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="onLogout()">Log Out</button>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- Side menu -->
+  <div class="c-bg">
+      <div class="c-flexbox">
+        <div class="c-sidebar">
+          <ul class="c-sidebar__menu">
+            <li>
+              <a class="c-sidebar__menu__item" (click)=toggleDisplaySignups() [ngClass]="isShowSignups ? 'is-active' : ''">
+                <img src="../assets/images/user-icon.svg" />
+                <span>Sign Ups</span>
+              </a>
+            </li>
+            <li>
+              <a class="c-sidebar__menu__item" (click)=toggleDisplayCustomers() [ngClass]="isShowCustomers ? 'is-active' : ''">
+                <img src="../assets/images/customers-icon.svg" />
+                <span>Customers</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--End of side menu -->
+            <div class="c-main u-m40" *ngIf="isShowSignups" >
+                <h2>Sign Ups</h2>
+                <table class="c-table">
+                  <thead class="c-table__header">
+                    <th class="c-table__head">First Name</th>
+                    <th class="c-table__head">Last Name</th>
+                    <th class="c-table__head">Email Address</th>
+                    <th class="c-table__head">Business Name</th>
+                    <th class="c-table__head">Plan $</th>
+                    <th class="c-table__head">Start Date</th>
+                    <th class="c-table__head">No Charge</th>
+                    <th class="c-table__head">Activity</th>
+                    <th class="c-table__head"></th>
+                  </thead>
+                  <tbody *ngFor="let signup of signups; let i = index; let o= odd; let e=even;" [ngClass]="{ odd: o, even: e }">
+                  <tr class="c-table__row">
+                    <td class="c-table__data">{{ signup.user.firstName }}</td>
+                    <td class="c-table__data">{{ signup.user.lastName }}</td>
+                    <td class="c-table__data">{{ signup.user.email }}</td>
+                    <td class="c-table__data">{{ signup.user.businessName }}</td>
+                    <td class="c-table__data">$0</td>
+                    <td class="c-table__data">{{ signup.user.createdAt }}</td>
+                    <td class="c-table__data">
+                      <div class="c-checkbox">
+                        <input class="c-checkbox__input" type="checkbox" [(ngModel)]="signup.user.noCharge" [id]="signup.user.id" name="checkbox"
+                         [checked]="signup.user.noCharge"
+                         (change)="onShouldCharge(signup.user.id, signup.user.noCharge)">
+                        <label class="c-checkbox__label" [for]="signup.user.id"></label>
+                      </div>
+                    </td>
+                    <td class="c-table__data" (click)="isCollapsed[signup.user.id] = !isCollapsed[signup.user.id]"
+                    [attr.aria-expanded]="false" aria-controls="signup.user.id">
+                    <img src="../assets/images/arrow-down.svg"/>
+                    </td>
+                    <td>
+                      <button class="btn btn-outline-primary menu-btn" (click)="loginAs(signup.user.id)">Login</button>
+                    </td>
+                  </tr>
+                  <tr class="c-table__row is-expanded" [id]="signup.user.id" [ngbCollapse]="!isCollapsed[signup.user.id]">
+                    <td colspan="100%" class="c-tab-container">
+                        <ngb-tabset>
+                        <ngb-tab class="c-tab-btn" title="Activity ({{ signup.emailActivities.length }})">
+                            <ng-template ngbTabContent>
+                                <div class="c-table__row__item" *ngFor="let emails of signup.emailActivities">
+                                    Review Request Sent to {{ emails.emailsSent }} person(s) on {{ emails.dateTime }}
+                                  </div>
+                          </ng-template>
+                        </ngb-tab>
+                            <ngb-tab class="c-tab-btn" title="Rating/Reviews ({{ signup.reviews.length }})">
+                            <ng-template ngbTabContent>
+                                    <ul class="c-reviews" *ngFor="let review of signup.reviews | slice: pageSize | slice: 0:itemsPerPage">
+                                      <li class="c-review">
+                                      <div class="c-review__heading">{{ review.customerEmail }}</div>
+                                        <div class="c-review__rate">
+                                            <div class="c-star">
+                                                <ng-template #t let-fill="fill">
+                                                    <span class="star" [class.full]="fill === 100">
+                                                      <span class="half" [style.width.%]="fill"><img src="../assets/images/star-inactive.svg" alt=""></span>
+                                                    </span>
+                                                </ng-template>
+                                            <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                                            </div>
+                                        </div>
+                                        <div class="c-review__text">
+                                          {{ review.text }}
+                                        </div>
+                                        <div class="c-review__stat">
+                                          Review from request sent to {{ review.countEmailsSent }} customer(s)
+                                        </div>
+                                        <div class="c-review__date">{{ review.submittedAt }}</div>
+                                      </li>
+                                    </ul>
+                                    <div class="c-pagination">
+                                        <ngb-pagination [collectionSize]="signup.reviews.length" [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)"
+                                        [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+                                    </div>
+                            </ng-template>
+                          </ngb-tab>
+                      </ngb-tabset>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+              <div class="c-main u-m40" *ngIf="isShowCustomers" >
+                  <h2>Customers</h2>
+                  <table class="c-table">
+                    <thead class="c-table__header">
+                      <th class="c-table__head">First Name</th>
+                      <th class="c-table__head">Last Name</th>
+                      <th class="c-table__head">Email Address</th>
+                      <th class="c-table__head">Business Name</th>
+                      <th class="c-table__head">Plan $</th>
+                      <th class="c-table__head">Start Date</th>
+                      <!-- <th class="c-table__head">No Charge</th> -->
+                      <th class="c-table__head">Activity</th>
+                      <th class="c-table__head"></th>
+                    </thead>
+                    <tbody *ngFor="let customer of customers; let i = index; let o= odd; let e=even;" [ngClass]="{ odd: o, even: e }">
+                    <tr class="c-table__row">
+                      <td class="c-table__data">{{ customer.user.firstName }}</td>
+                      <td class="c-table__data">{{ customer.user.lastName }}</td>
+                      <td class="c-table__data">{{ customer.user.email }}</td>
+                      <td class="c-table__data">{{ customer.user.businessName }}</td>
+                      <td class="c-table__data">{{ customer.subscription.plan }}</td>
+                      <td class="c-table__data">{{ customer.subscription.startDate }}</td>
+                      <!-- <td class="c-table__data">
+                        <div class="c-checkbox">
+                          <input class="c-checkbox__input" type="checkbox" [id]="customer.user.id" name="checkbox" [checked]="customer.user.noCharge">
+                          <label class="c-checkbox__label" [for]="customer.user.id"></label>
+                        </div>
+                      </td> -->
+                      <td class="c-table__data" (click)="isCollapsed[customer.user.id] = !isCollapsed[customer.user.id]"
+                      [attr.aria-expanded]="!isCollapsed[customer.user.id]" aria-controls="customer.user.id">
+                      <img src="../assets/images/arrow-down.svg"/>
+                      </td>
+                      <td>
+                        <button class="btn btn-outline-primary menu-btn" (click)="loginAs(customer.user.id)">Login</button>
+                      </td>
+                    </tr>
+                    <tr class="c-table__row is-expanded" [id]="customer.user.id" [ngbCollapse]="!isCollapsed[customer.user.id]">
+                      <td colspan="100%" class="c-tab-container">
+                          <ngb-tabset>
+                          <ngb-tab class="c-tab-btn" title="Activity ({{ customer.emailActivities.length }})">
+                              <ng-template ngbTabContent>
+                                  <div class="c-table__row__item" *ngFor="let emails of customer.emailActivities">
+                                      Review Request Sent to {{ emails.emailsSent }} person(s) on {{ emails.dateTime }}
+                                    </div>
+                            </ng-template>
+                          </ngb-tab>
+                              <ngb-tab class="c-tab-btn" title="Rating/Reviews ({{ customer.reviews.length }})">
+                              <ng-template ngbTabContent>
+                                      <ul class="c-reviews" *ngFor="let review of customer.reviews | slice: pageSize | slice: 0:itemsPerPage">
+                                        <li class="c-review">
+                                        <div class="c-review__heading">{{ review.customerEmail }}</div>
+                                          <div class="c-review__rate">
+                                              <div class="c-star">
+                                                  <ng-template #t let-fill="fill">
+                                                      <span class="star" [class.full]="fill === 100">
+                                                        <span class="half" [style.width.%]="fill"><img src="../assets/images/star-inactive.svg" alt=""></span>
+                                                      </span>
+                                                  </ng-template>
+                                              <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                                              </div>
+                                          </div>
+                                          <div class="c-review__text">
+                                            {{ review.text }}
+                                          </div>
+                                          <div class="c-review__stat">
+                                            Review from request sent to {{ review.countEmailsSent }} customer(s)
+                                          </div>
+                                          <div class="c-review__date">{{ review.submittedAt }}</div>
+                                        </li>
+                                      </ul>
+                                      <div class="c-pagination">
+                                          <ngb-pagination [collectionSize]="customer.reviews.length" [pageSize]="itemsPerPage"
+                                           [(page)]="currentCustomerPage" (pageChange)="onPageChange(currentCustomerPage)"
+                                          [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+                                      </div>
+                              </ng-template>
+                            </ngb-tab>
+                        </ngb-tabset>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
+      </div>
+    </div>

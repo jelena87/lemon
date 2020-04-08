@@ -1,0 +1,32 @@
+<div class="c-visible-mobile">
+    <div class="c-shape"></div>
+  </div>
+  <div class="c-wrapper-large">
+    <div class="c-logo">
+      <img class="logo" *ngIf="clientReview.clientLogo"  [src]="clientReview.clientLogo" />
+    </div>
+    <form #submitReview="ngForm" (ngSubmit)="onSubmit(submitReview.value)">
+        <h3 class="c-heading-medium">{{ clientReview.message }}</h3>
+        <p class="c-paragraph u-font-18">
+          How would you rate your experience with us?
+          We strive for a 5 star experience.
+        </p>
+        <div class="c-rating">
+            <input class="c-rating__input" type="radio" id="star5" name="rating" value="5" ngModel /><label for="star5" (click)="onPost()"></label>
+          <input class="c-rating__input" type="radio" id="star4" name="rating" value="4" ngModel /><label for="star4"></label>
+          <input class="c-rating__input" type="radio" id="star3" name="rating" value="3" ngModel /><label for="star3"></label>
+          <input class="c-rating__input" type="radio" id="star2" name="rating" value="2" ngModel /><label for="star2"></label>
+          <input class="c-rating__input" type="radio" id="star1" name="rating" value="1" ngModel /><label for="star1"></label>
+        </div>
+        <p class="c-paragraph u-font-18 mobile-paragraph">How was your experience?</p>
+        <textarea
+        class="c-textarea c-textarea--large u-width-580"
+        placeholder="Optional but helpful for us"
+        name="text"
+        ngModel>
+        </textarea>
+        <p style="color: red;">{{ errorMessage }}</p>
+        <button class="c-btn u-width-580 u-margin-auto" type="submit">Submit</button>
+    </form>
+    <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+  </div>

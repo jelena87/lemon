@@ -1,0 +1,75 @@
+<!-- <header class="c-header">
+  <div class="c-header__logo">
+    <a [routerLink]="['/']">
+        <img src="../assets/images/lemon.svg" />
+    </a>
+  </div>
+  <div class="u-position-relative">
+    <a class="c-header__btn" (click)="openNewEmailModal()">
+      <img src="../assets/images/btn-plus.svg" />
+      new review request
+    </a>
+      <div class="c-lets-get-reviews" *ngIf='noReviews'>
+        <img src="../assets/images/arrow.png" />
+        <div class="c-kalam-heading">Let's get some reviews!</div>
+      </div>
+      <div class="c-menu" ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary menu-btn" id="dropdownBasic1" ngbDropdownToggle>
+                {{ firstName }} {{ lastName }}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem (click)="onSettings()">Account Settings</button>
+            <button ngbDropdownItem (click)="onLogout()" *ngIf="!admin">Log Out</button>
+            <button ngbDropdownItem (click)="onReturnToAdmin()" *ngIf="admin">Return to admin</button>
+          </div>
+      </div>
+  </div>
+</header> -->
+<app-header></app-header>
+<div class="c-bg">
+  <div class="c-flexbox">
+    <div class="c-sidebar">
+      <a class="c-sidebar__title" href="#">
+        <img class="u-align-middle u-mr" src="../assets/images/file-text.svg" />
+        <span class="u-align-middle">Your reviews / ratings</span>
+      </a>
+      <a class="c-sidebar__title" href="https://forms.gle/7ejr55iGcYHRxTzm9" target="_blank">
+          <img class="u-align-middle u-mr" src="../assets/images/file-text.svg" />
+          <span class="u-align-middle">Request a Feature</span>
+      </a>
+    </div>
+    <div class="c-main">
+        <h2 class="c-heading u-text-left u-pl u-pt" *ngIf='reviews'>Ratings & Reviews</h2>
+        <div class="c-lets-get-reviews" *ngIf='noReviews'>
+            <img src="../assets/images/arrow.png" />
+            <div class="c-kalam-heading">Let's get some reviews!</div>
+          </div>
+        <ul class="c-reviews">
+          <li class="c-review" *ngFor='let review of reviews'>
+            <div class="c-review__heading" *ngIf="review.customerFirstName !== '' || review.customerLastName !== '' ; else diffHeading">{{ review.customerFirstName + ' ' + review.customerLastName }}</div>
+            <ng-template #diffHeading>
+              <div class="c-review__heading">
+                {{ review.customerEmail }}
+              </div>
+            </ng-template>
+            <div class="c-review__rate">
+              <div class="c-star">
+                  <ng-template #t let-fill="fill">
+                      <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill"><img src="../assets/images/star-inactive.svg" alt=""></span>
+                      </span>
+                    </ng-template>
+                  <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+              </div>
+            </div>
+            <div class="c-review__text">
+              {{ review.text }}
+            </div>
+            <div class="c-review__stat">
+              Review from request sent to {{ review.countEmailsSent }} customers
+            </div>
+            <div class="c-review__date">{{ review.submittedAt | date:'longDate' }}</div>
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>
