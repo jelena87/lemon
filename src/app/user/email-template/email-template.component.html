@@ -1,0 +1,12 @@
+<div class="email-template">
+    <div class="u-mb-large">
+        <img class="c-upload-btn"  alt='logo' title="logo" [src]="client.clientLogo"  />
+    </div>
+    <h4 class="email-h4">Thank you for visiting<br class="mobile"> us at<br> Miniluxe <br class="mobile">{{ client.businessName }}</h4>
+    <p class="email-p">Please help us share the<br class="mobile">  MiniLuxe story with a<br><br class="mobile"> 
+        Google Review!</p>
+    <!-- <button class="email-btn" (click)="onPost()">Review us on Google Reviews!</button> -->
+    <a class="email-btn" [href]="client.googleReviewLink" target="_blank">Review us on Google Reviews!</a>
+    <span class="email-span">Not happy with your experience?</span>
+    <a class="email-btn-contact"  [href]="surveyUrl" target="_blank">Contact us directly</a>
+</div>

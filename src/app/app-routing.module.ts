@@ -18,23 +18,50 @@ import { SubmittedScreenComponent } from './user/submitted-screen/submitted-scre
 import { SuccessScreenComponent } from './user/success-screen/success-screen.component';
 import { PostToGoogleComponent } from './user/post-to-google/post-to-google.component';
 import { SendMultipleEmailsComponent } from './user/send-multiple-emails/send-multiple-emails.component';
+import { EmailTemplateComponent } from './user/email-template/email-template.component';
+import { WebviewComponent } from './user/webview/webview.component';
+import { TopFansComponent } from './user/top-fans/top-fans.component';
+
+// const routes: Routes = [
+//   {path: '', component: UserDashboardComponent, canActivate: [LoginGuard]},
+//   {path: 'signup', component: SignupComponent},
+//   {path: 'login', component: LoginComponent},
+//   {path: 'account', component: AccountSettingsComponent, canActivate: [LoginGuard]},
+//   {path: 'send-one-email', component: OneCustomerEmailComponent, canActivate: [LoginGuard]},
+//   {path: 'upload-emails', component: SendListOfEmailsComponent, canActivate: [LoginGuard]},
+//   {path: 'upload', component: UploadEmailsComponent, canActivate: [LoginGuard]},
+//   {path: 'send-emails', component: SendEmailsComponent, canActivate: [LoginGuard]},
+//   {path: 'send-multiple-emails', component: SendMultipleEmailsComponent, canActivate: [LoginGuard]},
+//   {path: 'success', component: SuccessScreenComponent, canActivate: [LoginGuard]},
+//   {path: 'submitted', component: SubmittedScreenComponent},
+//   {path: 'rate', component: RatingScreenComponent},
+//   {path: 'post-to-google', component: PostToGoogleComponent},
+//   {path: 'choose-plan', component: ChoosePlanComponent, canActivate: [LoginGuard]},
+//   {path: 'admin-dashboard', component: AdminDashboardComponent},
+//   {path: 'external-review', component: EmailTemplateComponent},
+//   {path: 'webview', component: WebviewComponent},
+//   {path: 'external-review-top-fans', component: TopFansComponent}
+// ];
 
 const routes: Routes = [
-  {path: '', component: UserDashboardComponent, canActivate: [LoginGuard]},
+  {path: '', component: UserDashboardComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'account', component: AccountSettingsComponent, canActivate: [LoginGuard]},
-  {path: 'send-one-email', component: OneCustomerEmailComponent, canActivate: [LoginGuard]},
-  {path: 'upload-emails', component: SendListOfEmailsComponent, canActivate: [LoginGuard]},
-  {path: 'upload', component: UploadEmailsComponent, canActivate: [LoginGuard]},
-  {path: 'send-emails', component: SendEmailsComponent, canActivate: [LoginGuard]},
-  {path: 'send-multiple-emails', component: SendMultipleEmailsComponent, canActivate: [LoginGuard]},
-  {path: 'success', component: SuccessScreenComponent, canActivate: [LoginGuard]},
+  {path: 'account', component: AccountSettingsComponent},
+  {path: 'send-one-email', component: OneCustomerEmailComponent},
+  {path: 'upload-emails', component: SendListOfEmailsComponent},
+  {path: 'upload', component: UploadEmailsComponent},
+  {path: 'send-emails', component: SendEmailsComponent},
+  {path: 'send-multiple-emails', component: SendMultipleEmailsComponent},
+  {path: 'success', component: SuccessScreenComponent},
   {path: 'submitted', component: SubmittedScreenComponent},
   {path: 'rate', component: RatingScreenComponent},
   {path: 'post-to-google', component: PostToGoogleComponent},
-  {path: 'choose-plan', component: ChoosePlanComponent, canActivate: [LoginGuard]},
+  {path: 'choose-plan', component: ChoosePlanComponent},
   {path: 'admin-dashboard', component: AdminDashboardComponent},
+  {path: 'external-review', component: EmailTemplateComponent},
+  {path: 'webview', component: WebviewComponent},
+  {path: 'external-review-top-fans', component: TopFansComponent}
 ];
 
 @NgModule({

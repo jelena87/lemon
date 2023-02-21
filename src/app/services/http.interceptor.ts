@@ -5,8 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   idToken;
-  adminRoutes = ['https://trylemon.com/api/admin/signups.list', 'https://trylemon.com/api/admin/login',
-   'https://trylemon.com/api/admin/customers.list'];
+  // adminRoutes = ['https://trylemon.com/api/admin/signups.list', 'https://trylemon.com/api/admin/login',
+  //  'https://trylemon.com/api/admin/customers.list'];
+  adminRoutes = ['http://lemon.local/api/admin/signups.list', 'http://lemon.local/api/admin/login',
+  'http://lemon.local/api/admin/customers.list'];
 
     constructor() { }
 

@@ -28,7 +28,6 @@ errorMessage;
     this.reviewService.getReviewInfo()
     .subscribe(
       (res) => {
-        console.log(res);
         this.clientReview = res;
       }, (error: HttpErrorResponse) => {
     });

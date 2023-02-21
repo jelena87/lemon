@@ -37,4 +37,21 @@ onSubmit(reviewInfo: ReviewInfo) {
   );
 }
 
+  public getReviewExternalInfo() {
+    let params = new HttpParams();
+    const client = this.route.snapshot.queryParamMap.get('client');
+    params = params.set('client', client);
+
+    return this.httpClient.get(environment.getReviewExternal, { params });
+  }
+
+  public getReviewExternalInfoTopFans() {
+    let params = new HttpParams();
+    const client = this.route.snapshot.queryParamMap.get('client');
+    const customerName = this.route.snapshot.queryParamMap.get('customerName');
+    params = params.set('client', client).set('customerName', customerName);
+
+    return this.httpClient.get(environment.getReviewExternal, { params });
+  }
+
 }

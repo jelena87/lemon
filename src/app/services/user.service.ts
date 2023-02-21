@@ -36,7 +36,7 @@ constructor(private httpService: HttpService,
         headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded', Authorization: `Bearer token` })
     };
       return this.httpService.postToUrl(environment.signup, body, headers).pipe(tap(
-        (res) =>{
+        (res) => {
         localStorage.setItem('access_token', res.access_token);
         },
         (err) => console.log(err)));

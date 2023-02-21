@@ -35,6 +35,10 @@ import { ChoosePlanComponent } from './user/choose-plan/choose-plan.component';
 import { FreeTrialComponent } from './shared/dialogs/free-trial/free-trial.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { NgxStripeModule } from 'ngx-stripe';
+import { EmailTemplateComponent } from './user/email-template/email-template.component';
+import { GoogleReviewComponent } from './shared/dialogs/google-review/google-review.component';
+import { WebviewComponent } from './user/webview/webview.component';
+import { TopFansComponent } from './user/top-fans/top-fans.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +64,10 @@ import { NgxStripeModule } from 'ngx-stripe';
     ChoosePlanComponent,
     FreeTrialComponent,
     AdminDashboardComponent,
+    EmailTemplateComponent,
+    GoogleReviewComponent,
+    WebviewComponent,
+    TopFansComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,7 +96,8 @@ import { NgxStripeModule } from 'ngx-stripe';
     NewEmailComponent,
     WelcomeComponent,
     AlmostDoneComponent,
-    FreeTrialComponent
+    FreeTrialComponent,
+    GoogleReviewComponent
   ]
 })
 export class AppModule { }
